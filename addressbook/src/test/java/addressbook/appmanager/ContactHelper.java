@@ -107,14 +107,19 @@ public class ContactHelper extends HelperBase{
         click(By.xpath("//img[@alt='Edit']"));
     }
 
-    public void deleteContact() {
-        click(By.xpath("(//input[@name='update'])[3]"));
-        //wd.switchTo().alert().accert();
-        click(By.linkText("home"));
-    }
-
     private String closeAlertAndGetItsText() {
         return null;
     }
 
+    public void selectforDeleteContact() {
+        click(By.name("selected[]"));
+    }
+
+    public void confirmContactDeletion() {
+        wd.switchTo().alert().accept();
+    }
+
+    public void clickdeleteContact() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
 }
