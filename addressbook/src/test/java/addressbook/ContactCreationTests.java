@@ -6,9 +6,9 @@ public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() throws Exception {
-    app.gotoNewContact();
-    app.fillinNewContact();
-    app.submitNewContact();
-    app.returntoHomePage();
+    app.getNavigationHelper().gotoNewContact();
+    app.getContactHelper().fillinNewContact();
+    app.getContactHelper().submitNewContact();
+    app.getNavigationHelper().returntoHomePage();
   }
 }
