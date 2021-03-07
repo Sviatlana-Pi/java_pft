@@ -3,6 +3,9 @@ package addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
+import static org.testng.AssertJUnit.assertTrue;
 
 public class ContactHelper extends HelperBase{
 
@@ -18,6 +21,31 @@ public class ContactHelper extends HelperBase{
         type(By.name("firstname"), "first name");
         type(By.name("middlename"), "middle name");
         type(By.name("lastname"), "last name");
+        type(By.name("nickname"), "nick name");
+        type(By.name("title"), "Mr");
+        type(By.name("company"), "Company");
+        type(By.name("address"), "address 50");
+        type(By.name("home"),"city");
+        type(By.name("work"), "tester");
+        type(By.name("fax"), "54654(78)");
+        type(By.name("email"), "test@mail.com");
+        type(By.name("email2"), "test2@mail.com");
+        type(By.name("email3"), "test3@mail.com");
+        type(By.name("homepage"), "www.tut.by");
+        type(By.name("address2"), "address new 2");
+        type(By.name("notes"),"note");
+        type(By.name("mobile"), "067876768");
+        //addContactToGroup("new_group", "group1");
+        //uploadPhoto("photo", "C:\\fakepath\\1.jpg");
+        type(By.name("mobile"), "067876768");
+        //fillinBirthday();
+        //fillinAnniversary("aday", "amonth", "ayear", "1990", "new_group");
+    }
+
+    public void updateContact() {
+        type(By.name("firstname"), "first name1");
+        type(By.name("middlename"), "middle name1");
+        type(By.name("lastname"), "last name1");
         type(By.name("nickname"), "nick name");
         type(By.name("title"), "Mr");
         type(By.name("company"), "Company");
@@ -74,4 +102,19 @@ public class ContactHelper extends HelperBase{
       wd.findElement(By.name(photo)).clear();
       wd.findElement(By.name(photo)).sendKeys(s);
     }
+
+    public void selectforEditContact() {
+        click(By.xpath("//img[@alt='Edit']"));
+    }
+
+    public void deleteContact() {
+        click(By.xpath("(//input[@name='update'])[3]"));
+        //wd.switchTo().alert().accert();
+        click(By.linkText("home"));
+    }
+
+    private String closeAlertAndGetItsText() {
+        return null;
+    }
+
 }

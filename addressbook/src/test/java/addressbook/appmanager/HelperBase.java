@@ -31,4 +31,7 @@ public class HelperBase {
     }
 
 
+    public void selectCheckbox(By locator) {
+        click(By.name("selected[]"));
+    }
 }

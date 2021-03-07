@@ -1,4 +1,4 @@
-package addressbook;
+package addressbook.tests;
 
 import addressbook.appmanager.ApplicationManager;
 import org.testng.annotations.AfterMethod;
